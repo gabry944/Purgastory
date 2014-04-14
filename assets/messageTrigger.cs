@@ -15,4 +15,12 @@ public class messageTrigger : MonoBehaviour {
 		inside = false;
 		angelInteract.text = "";
 	}
+
+	void Update(){
+		if (inside == true) {
+			if(Input.GetKey("e")){
+				angelInteract.text = "Hello!";
+			}	
+		}
+	}
 }
