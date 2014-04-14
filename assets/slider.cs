@@ -3,6 +3,7 @@ using System.Collections;
 
 public class slider : MonoBehaviour {
 
+	static public int coins = 0;
 	public GUISkin skin;
 	private float sliderValue = 1.0f;
 
