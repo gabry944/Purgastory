@@ -3,11 +3,16 @@ using System.Collections;
 
 public class messageTrigger : MonoBehaviour {
 
+	public GUIText angelInteract;
+	private bool inside = false;
+
 	void OnTriggerEnter(Collider c){
-		SendMessageUpwards ("Press E");
+		angelInteract.text = "Press e to interact";
+		inside = true;
 	}
 
 	void OnTriggerExit(Collider c){
-		SendMessageUpwards("UnSetGUI");
+		inside = false;
+		angelInteract.text = "";
 	}
 }
