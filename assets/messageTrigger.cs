@@ -25,7 +25,7 @@ public class messageTrigger : MonoBehaviour {
 
 	void start(){
 		try{
-			StreamReader theReader = new StreamReader("C:/Users/Bella/Documents/New Unity Project 1/Assets/test.txt", Encoding.Default);
+			StreamReader theReader = new StreamReader("test.txt", Encoding.Default);
 			readingOK = true;
 		}
 		catch(Exception e){
