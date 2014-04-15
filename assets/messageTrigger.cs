@@ -18,7 +18,7 @@ public class messageTrigger : MonoBehaviour {
 		angelInteract.text = "Press e to interact";
 
 		if(fileNotRead == false){
-			reader = new StreamReader(@"C:\Users\Bella\Documents\New Unity Project 1\Assets\test.txt");
+			reader = new StreamReader(@"angelConv.txt");
 			fileNotRead = true;
 		}
 		inside = true;
