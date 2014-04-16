@@ -6,16 +6,16 @@ using System.Text;
 
 public class messageTrigger : MonoBehaviour {
 
-	public GUIText angelInteract;
 	private bool inside = false;
-	protected FileInfo angelConv = null;
 	protected StreamReader reader = null;
 	protected string line = "";
 	private bool fileNotRead = false;
+	private string text = "";
 
 
 	void OnTriggerEnter(Collider c){
-		angelInteract.text = "Press e to interact";
+		text = "Press e to interact";
+		OnGUI ();
 
 		if(fileNotRead == false){
 			reader = new StreamReader(@"angelConv.txt");
@@ -26,7 +26,7 @@ public class messageTrigger : MonoBehaviour {
 
 	void OnTriggerExit(Collider c){
 		inside = false;
-		angelInteract.text = "";
+		text = "";
 	}
 
 	void Update(){
@@ -34,8 +34,16 @@ public class messageTrigger : MonoBehaviour {
 		if (inside == true && Input.GetKeyDown("e")){
 			line = reader.ReadLine();
 			if(line != null){
-				angelInteract.text = line;
-			}	
+				text = line;
+			}
+			OnGUI ();
+		}
+	}
+
+	void OnGUI(){
+		if (inside == true)
+		{
+			GUI.Box(new Rect(900, 500, 250, 150), text);
 		}
 	}
 }
