@@ -5,7 +5,7 @@ public class Portal : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		Debug.Log ("Hello, world, miqqo speaking!");
 	}
 
 	void OnTriggerEnter(Collider other)
